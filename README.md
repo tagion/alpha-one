@@ -44,7 +44,7 @@ This manual is intended for Tagion **AlphaOne** network users who will send and 
 
 > **Important!**
 >
-> Tagion **AlphaOne** runs only on **Linux**. If you don't have Linux (or **[WSL](https://www.windowscentral.com/install-windows-subsystem-linux-windows-10)**), you can use our **Docker image**.
+> Tagion **AlphaOne** runs only on **Linux**. If you don't have Linux (or **[WSL](https://www.windowscentral.com/install-windows-subsystem-linux-windows-10)**), you can use our **[Docker image](#option-2-pull-the-tagiontagionwallet-docker-image)**.
 >
 > Going forward, this manual assumes you are running `tagionwallet` from Linux.
 
@@ -75,8 +75,6 @@ tagionwallet --help
 
 ### **Option 2**. Pull the `tagion/tagionwallet` Docker Image
 
-> If you don't have **Linux** or **WSL**, or just want to use Docker instead, we prepared an image for you.
->
 > If you **don't have Docker**, follow the [Getting Started With Docker](https://www.docker.com/get-started) guide first.
 
 Run the following command to run the `tagion/tagionwallet` Docker image:
