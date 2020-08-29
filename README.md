@@ -118,7 +118,7 @@ When sending `--pay` or `--update` requests via the **Tagion Wallet CLI**, you m
 tagionwallet --update --amount -u 3.250.150.166
 ```
 
-Here is a list of the first 11 nodes, you can use any of them:
+Here is a list of the first nodes, you can use any of them:
 
 ```
 3.250.150.166
@@ -131,7 +131,6 @@ Here is a list of the first 11 nodes, you can use any of them:
 34.245.73.196
 3.250.143.172
 34.251.132.77
-52.31.179.105
 ```
 
 ## About Tagion Wallet CLI
