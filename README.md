@@ -1,3 +1,5 @@
+<a href="https://tagion.org"><img alt="tagion logo" src="https://github.com/tagion/resources/raw/master/branding/logomark.svg?sanitize=true" alt="tagion.org" height="60"></a>
+
 # Tagion AlphaOne Release
 
 ## What is Tagion Network
