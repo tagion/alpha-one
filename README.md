@@ -26,6 +26,7 @@ With **AlphaOne** and **Tagion Wallet CLI**, users can create wallets, request T
   - [Request Tagions](#request-tagions)
   - [Transfer Tagions between wallets](#transfer-tagions-between-wallets)
   - [Conclusion](#conclusion)
+- [Repository](#repository)
   - [Maintainers](#maintainers)
   - [Questions](#questions)
   - [Issues](#issues)
@@ -248,7 +249,7 @@ Congratulations! You just made your first transaction on **Tagion AlphaOne** Net
 
 In this manual you used the Tagion Wallet CLI and public AlphaOne network to send and receive testnet Tagions. Behind the scenes, nodes used **gossip protocol** to transmit transactions, the **hashgraph algorithm** to reach consensus and order transactions, and the **DART** database to store and sync the data. The basic protocols are live and running smoothly.
 
----
+# Repository
 
 ## Maintainers
 
