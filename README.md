@@ -50,7 +50,7 @@ This manual is intended for Tagion **AlphaOne** network users who will send and 
 
 ### **Option 1**. Download the `tagionwallet` (Linux or WSL)
 
-1. [Download the wallet binary](https://github.com/tagion/alpha/releases/download/wallet_1.0/tagionwallet)
+1. [Download the wallet binary](https://github.com/tagion/alpha_one/releases/download/tagionwallet-v1.0/tagionwallet)
 2. Check if it runs:
 
 ```
