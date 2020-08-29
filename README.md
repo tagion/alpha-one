@@ -17,7 +17,7 @@ With **AlphaOne** and **Tagion Wallet CLI**, users can create wallets, request T
 - [Tagion AlphaOne Manual](#tagion-alphaone-manual)
   - [Preconditions](#preconditions)
     - [**Option 1**. Download the `tagionwallet` (Linux or WSL)](#option-1-download-the-tagionwallet-linux-or-wsl)
-    - [Update your PATH](#update-your-path)
+      - [Update your PATH](#update-your-path)
     - [**Option 2**. Pull the `tagion/tagionwallet` Docker Image](#option-2-pull-the-tagiontagionwallet-docker-image)
   - [AlphaOne Node IP Addresses](#alphaone-node-ip-addresses)
   - [About Tagion Wallet CLI](#about-tagion-wallet-cli)
@@ -57,7 +57,7 @@ This manual is intended for Tagion **AlphaOne** network users who will send and 
 ./tagionwallet --help
 ```
 
-### Update your PATH
+#### Update your PATH
 
 To access `tagionwallet` from anywhere, your shell must know the path to the binary. Update the PATH environment variable:
 
