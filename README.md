@@ -16,9 +16,9 @@ With **AlphaOne** and **Tagion Wallet CLI**, users can create wallets, request T
   - [Table of contents](#table-of-contents)
 - [Tagion AlphaOne Manual](#tagion-alphaone-manual)
   - [Preconditions](#preconditions)
-    - [**Option 1**. Download the `tagionwallet` (Linux or WSL)](#option-1-download-the-tagionwallet-linux-or-wsl)
-      - [Update your PATH](#update-your-path)
-    - [**Option 2**. Pull the `tagion/tagionwallet` Docker Image](#option-2-pull-the-tagiontagionwallet-docker-image)
+    - [**Option 1**. Use the binary on Linux](#option-1-use-the-binary-on-linux)
+      - [Install the `tagionwallet`](#install-the-tagionwallet)
+    - [**Option 2**. Use Docker Image](#option-2-use-docker-image)
   - [AlphaOne Node IP Addresses](#alphaone-node-ip-addresses)
   - [About Tagion Wallet CLI](#about-tagion-wallet-cli)
     - [What is payment request](#what-is-payment-request)
@@ -44,36 +44,24 @@ This manual is intended for Tagion **AlphaOne** network users who will send and 
 
 > **Important!**
 >
-> Tagion **AlphaOne** runs only on **Linux**. If you don't have Linux (or **[WSL](https://www.windowscentral.com/install-windows-subsystem-linux-windows-10)**), you can use our **[Docker image](#option-2-pull-the-tagiontagionwallet-docker-image)**.
+> **Tagion Wallet CLI** runs only on **Linux**. If you don't have Linux, you can use our **[Docker image](#option-2-use-docker-image)** instead.
 >
-> Going forward, this manual assumes you are running `tagionwallet` from Linux.
+> *Going forward, this manual assumes you are running `tagionwallet` from Linux.*
 
-### **Option 1**. Download the `tagionwallet` (Linux or WSL)
+### **Option 1**. Use the binary on Linux
+
+#### Install the `tagionwallet`
 
 1. [Download the wallet binary](https://github.com/tagion/alpha_one/releases/download/tagionwallet-v1.0/tagionwallet)
-2. Check if it runs:
-
-```
-./tagionwallet --help
-```
-
-#### Update your PATH
-
-To access `tagionwallet` from anywhere, your shell must know the path to the binary. Update the PATH environment variable:
+2. Install it to `/usr/bin`
 
 ```bash
-# Move the binary to some directory
-mkdir -p ~/tagion/bin
-mv ./tagionwallet ~/tagion/bin/
-
-# Will update PATH for this shell session only:
-export PATH=$PATH:~/tagion/bin/
-
-# Now you can run tagionwallet from anywhere
-tagionwallet --help
+chmod +x ./tagionwallet # Adds execution rights
+cp ./tagionwallet /usr/bin # Move to other binaries
+tagionwallet --help # Will output help
 ```
 
-### **Option 2**. Pull the `tagion/tagionwallet` Docker Image
+### **Option 2**. Use Docker Image
 
 > If you **don't have Docker**, follow the [Getting Started With Docker](https://www.docker.com/get-started) guide first.
 
@@ -143,7 +131,7 @@ Files that are generated include:
 - `bills.hibon` - public keys of the tagion bills;
 - `invoice.hibon` - **payment request** that needs to be paid by the other wallet;
 
-Most important commands:
+Most important commands (don't use before [creating the wallet](#how-to-create-the-wallet)):
 
 ```bash
 # Enter Visual UI for creating 
@@ -212,6 +200,7 @@ First, you need to generate a **payment request**:
 # and fill the sum of Tagions to generate (less then 1000)
 # Quit the Visual UI by pressing `q` until you are out
 
+ls # List all files in the Wallet directory
 # ./invoice.hibon should appear
 ```
 
