@@ -208,7 +208,8 @@ First, you need to generate a **payment request**:
 # Enter Pincode
 # Press 'a' to enter account
 # Press 'i' to enter invoice mode
-# Type the invoice label, press enter and fill the sum of Tagions to generate
+# Type the invoice label, press enter
+# and fill the sum of Tagions to generate (less then 1000)
 # Quit the Visual UI by pressing `q` until you are out
 
 # ./invoice.hibon should appear
