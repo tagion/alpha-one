@@ -11,13 +11,10 @@
 
 With **AlphaOne** and **Tagion Wallet CLI**, users can create wallets, request Tagions from the automated faucet, create and send payment requests, and transfer Tagions between wallets.
 
---- 
-
 ## Table of contents
 - [Tagion AlphaOne Release](#tagion-alphaone-release)
   - [Table of contents](#table-of-contents)
 - [Tagion AlphaOne Manual](#tagion-alphaone-manual)
-  - [Who is this manual for?](#who-is-this-manual-for)
   - [Preconditions](#preconditions)
     - [**Option 1**. Download the `tagionwallet` (Linux or WSL)](#option-1-download-the-tagionwallet-linux-or-wsl)
     - [Update your PATH](#update-your-path)
@@ -33,11 +30,8 @@ With **AlphaOne** and **Tagion Wallet CLI**, users can create wallets, request T
   - [Questions](#questions)
   - [Issues](#issues)
 
---- 
 
 # Tagion AlphaOne Manual
-
-## Who is this manual for?
 
 This manual is intended for Tagion **AlphaOne** network users who will send and receive Tagions over the network in order to build up both user experience and a stronger network. The manual focuses on the following:
 
