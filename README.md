@@ -158,12 +158,12 @@ Tagion does not have an accounting system, like most blockchains do. Instead, we
 
 To send Tagions from one wallet to another, the sender must know the public key of the receiver's bill. Currently, we use a primitive system of **payment requests** (previously called *invoices*) for this. The receiver must generate the payment request, that will be fulfilled by the sender.
 
-## How to create the wallet
+## How to create a wallet
 
-You can create as many wallets as you want, having one directory for each one. For this guide, let's create two wallets, so you can send Tagions from one to the other.
+You can create as many wallets as you want, with one directory for each wallet. For this guide, let's create two wallets, so you can send Tagions from one to the other.
 
 ``` bash
-# Create two directories for each wallet
+# Create two directories, one for each wallet
 mkdir w1 w2
 ```
 
@@ -173,7 +173,7 @@ Now from each directory, enter the Visual UI and create the wallets:
 cd w1
 tagionwallet -g # Enter the Visual UI
 # Press 'c' to enter the creation menu
-# Use arrows and 'Enter' to navigate through recovery questions
+# Use arrows and 'Enter' to navigate through the recovery questions
 # Answer at least 3 questions
 # Press 'c' again to confirm
 # Enter a 4-digit Pincode (will be used later)
@@ -184,11 +184,11 @@ cd ../w2
 # Repeat the process
 ```
 
-Now you should have `tagionwallet.hibon` file in each directory. These files are your wallets.
+Now you should have a `tagionwallet.hibon` file in each directory. These files are your wallets.
 
 ## Request Tagions
 
-You need some Tagions to pay from one wallet to another. Luckily, we have an **automated faucet** that will send test Tagions to your wallet.
+You need some Tagions to pay from one wallet to another. For that, we have an **automated faucet** that will send test Tagions to your wallet.
 
 First, you need to generate a **payment request**:
 
@@ -211,7 +211,7 @@ Then, send the `invoice.hibon` to our API:
 curl -F paymentRequest=@invoice.hibon api.monitor.tagion.org/faucet/print
 ```
 
-If there were no problem, you will see a message, saying "Print request was sent to the network". Wait for 5-15 seconds and check the balance:
+If there were no problems, you will see a message saying "Print request was sent to the network". Wait for 5-15 seconds and check the balance:
 
 ```bash
 tagionwallet --update --amount -u 3.249.14.175
@@ -221,7 +221,7 @@ You should see that your balance has changed.
 
 ## Transfer Tagions between wallets
 
-Now you have Tagions in one of your wallets, you can send them to another wallet. In this guide we will show you how to send to your second wallet, that you have created previously.
+Now that you have Tagions in one of your wallets, you can send them to another wallet. In this guide, we will show you how to send them to your second wallet, which you created previously.
 
 ```bash
 # Go to your empty wallet's directory
@@ -234,7 +234,7 @@ tagionwallet -g # Enter GUI to generate payment request (invoice)
 cd ../w1
 tagionwallet --pay ../w2/invoice.hibon -x [your pin-code] -u 3.249.14.175 --send
 
-# Check balance in 10 seconds
+# Check your balance in 10 seconds
 tagionwallet --update --amount -u 3.249.14.175
 
 # Once the balance is updated, you can make sure it is also
@@ -247,7 +247,7 @@ Congratulations! You just made your first transaction on **Tagion AlphaOne** Net
 
 ## Conclusion
 
-In this manual you used the Tagion Wallet CLI and public AlphaOne network to send and receive testnet Tagions. Behind the scenes, nodes used **gossip protocol** to transmit transactions, the **hashgraph algorithm** to reach consensus and order transactions, and the **DART** database to store and sync the data. The basic protocols are live and running smoothly.
+In this manual you used the Tagion Wallet CLI and public AlphaOne network to send and receive testnet Tagions. Behind the scenes, the nodes used **gossip protocol** to transmit transactions, the **hashgraph algorithm** to reach a consensus and order transactions, and the **DART** database to store and sync the data. The basic protocols are live and running smoothly.
 
 # Repository
 
@@ -260,7 +260,7 @@ In this manual you used the Tagion Wallet CLI and public AlphaOne network to sen
 
 ## Questions
 
-For questions and support please use the [official forum](https://forum.tagion.org/c/development/6) or [Telegram chat](https://t.me/tagionChat). The issue list of this repo is exclusively for bug reports and feature requests.
+For questions and support, please use the [official forum](https://forum.tagion.org/c/development/6) or [Telegram chat](https://t.me/tagionChat). The issue list of this repo is exclusively for bug reports and feature requests.
 
 ## Issues
 
