@@ -46,4 +46,4 @@ docker run -it -v ~/tagionwallets:/files tagion/tagionwallet bash
 
 Now the `/files` directory in the container will match `C:\tagionwallets` or `~/tagionwallets` on your host machine. 
 
-**Now you can proceed with the [AlphaOne manual](../README.md#alphaone-node-ip-addresses), like you have Ubuntu 20.04.**
+**Now you can proceed with the [AlphaOne manual](../README.md#alphaone-node-ip-addresses), like you have Ubuntu 20.04 and `tagionwallet` binary installed.**
