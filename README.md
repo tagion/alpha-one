@@ -2,30 +2,30 @@
 
 # Tagion AlphaOne Release
 
-> The Tagion network decentralizes trading and transferring between compatible cryptocurrencies and is operated by a democratic governance mechanism: the users of the network essentially own and control the network as it is open and technically accessible for everyone.
+> The Tagion network decentralizes trading and transferring between compatible cryptocurrencies and is operated by a democratic governance mechanism: the users of the network essentially own and control the network, as it is open and technically accessible for everyone.
 > 
-> The network itself consists of a **gossip protocol,** which is used for data synchronization, the **hashgraph algorithm**, which provides consensus and ordering transactions, and the **sharding** **opportunity,** that lets transactions run in parallel and enhances the speed of the system.
+> The network itself consists of a **gossip protocol,** which is used for data synchronization, the **hashgraph algorithm**, which provides consensus and ordering transactions, and the **sharding** **opportunity,** which lets transactions run in parallel and enhances the speed of the system.
 
 
 **AlphaOne** is Tagion's initial test network. It consists of a stable public network in which users can send payment requests and receive Tagions in order to test and enhance the system. Tagion **AlphaOne** is live for users, but it is a closed testnet; for access, please contact: [Roxana Nasoi](mailto:rn@i25s.com).
 
-With **AlphaOne** and **Tagion Wallet CLI**, users can create wallets, request Tagions from the automated faucet, create and send payment requests, and transfer Tagions between wallets.
+With **AlphaOne** and **Tagion Wallet CLI**, users can create accounts, request Tagions from the automated faucet, create and send payment requests, and transfer Tagions between accounts.
 
 ## Table of contents
 - [Tagion AlphaOne Release](#tagion-alphaone-release)
   - [Table of contents](#table-of-contents)
 - [Tagion AlphaOne Manual](#tagion-alphaone-manual)
   - [Preconditions](#preconditions)
-      - [Make sure to have required libraries](#make-sure-to-have-required-libraries)
+      - [Make sure that you have the required libraries](#make-sure-to-have-required-libraries)
         - [`libssl1.1`](#libssl11)
         - [`curl`](#curl)
       - [Install the `tagionwallet`](#install-the-tagionwallet)
   - [AlphaOne Node IP Addresses](#alphaone-node-ip-addresses)
   - [About Tagion Wallet CLI](#about-tagion-wallet-cli)
     - [What is a payment request](#what-is-a-payment-request)
-  - [How to create a wallet](#how-to-create-a-wallet)
+  - [How to create an account](#how-to-create-a-wallet)
   - [Request Tagions](#request-tagions)
-  - [Transfer Tagions between wallets](#transfer-tagions-between-wallets)
+  - [Transfer Tagions between accounts](#transfer-tagions-between-wallets)
   - [Conclusion](#conclusion)
 - [Repository](#repository)
   - [Maintainers](#maintainers)
@@ -37,9 +37,9 @@ With **AlphaOne** and **Tagion Wallet CLI**, users can create wallets, request T
 
 This manual is intended for Tagion **AlphaOne** network users who will send and receive Tagions over the network in order to build up both user experience and a stronger network. The manual focuses on the following:
 
-- Creating the environment in which the Tagion Wallet CLI can be used;
-- Accessing Tagion AlphaOne network via the Wallet CLI;
-- Creating and using the Tagion Wallet CLI to send and receive Tagions within the AlphaOne network.
+- Creating the environment in which Tagion Wallet CLI can be used;
+- Accessing Tagion AlphaOne network via Wallet CLI;
+- Creating and using Tagion Wallet CLI to send and receive Tagions within the AlphaOne network.
 
 
 ## Preconditions
@@ -48,11 +48,11 @@ This manual is intended for Tagion **AlphaOne** network users who will send and 
 >
 > **Tagion Wallet CLI** was tested only on **Ubuntu 18.04** and **Ubuntu 20.04**. 
 > 
-> If have different OS, you can try using our **experimental** **[Docker image](./experimental/README.md#use-docker-image-to-run-tagionwallet)** instead.
+> If have a different OS, you can try using our **experimental** **[Docker image](./experimental/README.md#use-docker-image-to-run-tagionwallet)** instead.
 > 
 > *Going forward, this manual assumes you are running `tagionwallet` from **Ubuntu 18.04** or **Ubuntu 20.04**.*
 
-#### Make sure to have required libraries
+#### Make sure you have the required libraries
 
 ##### `libssl1.1`
 
@@ -64,7 +64,7 @@ ldconfig -p | grep libssl
 >  libssl.so.1.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libssl.so.1.1
 >  libssl.so.1.0.0 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libssl.so.1.0.
 
-# If you had empty output, install the library:
+# If you had an empty output, install the library:
 apt-get install libssl1.1 -y
 ```
 
@@ -76,20 +76,22 @@ ldconfig -p | grep curl
 
 >   libcurl-gnutls.so.4 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so.4
 
-# If you had empty output, install the library:
+# If you had an empty output, install the library:
 apt-get install curl -y
 ```
 
 #### Install the `tagionwallet`
 
 1. [Download the wallet binary](https://github.com/tagion/alpha_one/releases/download/tagionwallet-v1.0/tagionwallet)
-2. Install it to `/usr/bin`
+2. Install the binary itself (via sudo) to `/usr/bin' 
 
 ```bash
 chmod +x ./tagionwallet # Adds execution rights
 cp ./tagionwallet /usr/bin # Move to other binaries
 tagionwallet --help # Will output help
 ```
+ *NOTE:* When installing the binary, make sure to install the binary itself and not the folder that it is in.
+
 
 ## AlphaOne Node IP Addresses
 
@@ -117,19 +119,19 @@ Here is a list of the first nodes; you can use any of them:
 
 ## About Tagion Wallet CLI
 
-When using `tagionwallet`, it will generate and work with files in the directory you call it from. You can have as many wallets as you want, just by using `tagionwallet` from different directories. 
+When using `tagionwallet`, it will generate and work with files in the directory you call it from. You can have as many accounts as you want, just by using `tagionwallet` from different directories. 
 
 Files that are generated include:
 
-- `tagionwallet.hibon` - configuration and seed of the specific wallet;
+- `tagionwallet.hibon` - configuration and seed of the specific account;
 - `bills.hibon` - public keys of the tagion bills;
-- `invoice.hibon` - **payment request** that needs to be paid by the other wallet;
+- `invoice.hibon` - **payment request** that needs to be paid by the other account;
 
 Most important commands (don't use before [creating the wallet](#how-to-create-the-wallet)):
 
 ```bash
-# Enter Visual UI for creating a 
-# wallet or generating invoices:
+# Enter Visual UI for creating an 
+# account for generating invoices:
 tagionwallet -g 
 
 # Update the local bills.hibon:
@@ -147,20 +149,20 @@ tagionwallet --pay ./invoice.hibon -x 1111 -u 3.249.14.175 --send
 
 ### What is a payment request
 
-Tagion does not have an accounting system, like most blockchains do. Instead, we store the bills in the database. The wallet software manages the keys for those bills. You can 'spend' the bills using the Tagion compatible wallet, in our case - Wallet CLI.
+Tagion does not have an accounting system, like most blockchains do. Instead, we store the bills in the database. The account software manages the keys for those bills. You can 'spend' the bills using the Tagion compatible wallet, in our case - Wallet CLI.
 
-To send Tagions from one wallet to another, the sender must know the public key of the receiver's bill. Currently, we use a primitive system of **payment requests** (previously called *invoices*) for this. The receiver must generate the payment request, that will be fulfilled by the sender.
+To send Tagions from one account to another, the sender must know the public key of the receiver's bill. Currently, we use a primitive system of **payment requests** (previously called *invoices*) for this. The receiver must generate the payment request that will be fulfilled by the sender.
 
-## How to create a wallet
+## How to create an account
 
-You can create as many wallets as you want, with one directory for each wallet. For this guide, let's create two wallets, so you can send Tagions from one to the other.
+You can create as many accounts as you want, with one directory for each account. For this guide, let's create two accounts, so you can send Tagions from one to the other.
 
 ``` bash
-# Create two directories, one for each wallet
+# Create two directories, one for each account
 mkdir w1 w2
 ```
 
-Now from each directory, enter the Visual UI and create the wallets:
+Now, from each directory, enter the Visual UI and create the accounts:
 
 ```bash
 cd w1
@@ -181,7 +183,7 @@ Now you should have a `tagionwallet.hibon` file in each directory. These files a
 
 ## Request Tagions
 
-You need some Tagions to pay from one wallet to another. For that, we have an **automated faucet** that will send test Tagions to your wallet.
+You need some Tagions to pay from one account to another. For that, we have an **automated faucet** that will send test Tagions to your account.
 
 First, you need to generate a **payment request**:
 
@@ -212,26 +214,26 @@ tagionwallet --update --amount -u 3.249.14.175
 
 You should see that your balance has changed.
 
-## Transfer Tagions between wallets
+## Transfer Tagions between accounts
 
-Now that you have Tagions in one of your wallets, you can send them to another wallet. In this guide, we will show you how to send them to your second wallet, which you created previously.
+Now that you have Tagions in one of your accounts, you can send them to another account. In this guide, we will show you how to send them to your second account, which you created previously.
 
 ```bash
-# Go to your empty wallet's directory
+# Go to your empty account's directory
 cd ../w2
 
-# Generate a payment request, as you did in the previous step
+# Generate a payment request, as you did in the previous example
 tagionwallet -g # Enter GUI to generate payment request (invoice)
 
-# Go to your wallet with Tagions
+# Go to your account that has Tagions and pay
 cd ../w1
 tagionwallet --pay ../w2/invoice.hibon -x [your pin-code] -u 3.249.14.175 --send
 
 # Check your balance in 10 seconds
 tagionwallet --update --amount -u 3.249.14.175
 
-# Once the balance is updated, you can make sure it is also
-# updated in the second wallet:
+# Once the balance in the first account is updated, you can make sure it is also
+# updated in the second account:
 cd ../w2
 tagionwallet --update --amount -u 3.249.14.175
 ```
@@ -240,7 +242,7 @@ Congratulations! You just made your first transaction on **Tagion AlphaOne** Net
 
 ## Conclusion
 
-In this manual you used the Tagion Wallet CLI and public AlphaOne network to send and receive testnet Tagions. Behind the scenes, the nodes used **gossip protocol** to transmit transactions, the **hashgraph algorithm** to reach a consensus and order transactions, and the **DART** database to store and sync the data. The basic protocols are live and running smoothly.
+In this guide, you used Tagion Wallet CLI and public AlphaOne network to send and receive testnet Tagions. Behind the scenes, the nodes used **gossip protocol** to transmit transactions, the **hashgraph algorithm** to reach a consensus and order transactions, and the **DART** database to store and sync the data. The basic protocols are live and running smoothly.
 
 # Repository
 
