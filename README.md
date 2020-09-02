@@ -203,7 +203,7 @@ ls # List all files in the Wallet directory
 Then, send the `invoice.hibon` to our API:
 
 ```bash
-curl -F paymentRequest=@invoice.hibon api.monitor.tagion.org/faucet/print
+curl -sF paymentRequest=@invoice.hibon https://api.monitor.tagion.org/faucet/print
 ```
 
 If there were no problems, you will see a message saying "Print request was sent to the network". Wait for 5-15 seconds and check the balance:
