@@ -229,7 +229,8 @@ Now that you have Tagions in one of your accounts, you can send them to another 
 cd ../w2
 
 # Generate a payment request, as you did in the previous example
-tagionwallet -g # Enter GUI to generate payment request (invoice)
+# Remember to enter valid pin-code
+tagionwallet --pin 1234 --create-invoice Transfer:149
 
 # Go to your account that has Tagions and pay
 cd ../w1
