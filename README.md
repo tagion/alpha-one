@@ -130,8 +130,7 @@ Files that are generated include:
 Most important commands (don't use before [creating the wallet](#how-to-create-the-wallet)):
 
 ```bash
-# Enter Visual UI for creating an 
-# account for generating invoices:
+# Enter Visual UI for creating accounts:
 tagionwallet -g 
 
 # Update the local bills.hibon:
@@ -142,6 +141,9 @@ tagionwallet --amount
 
 # Shortcut for updating and printing:
 tagionwallet --update --amount -u 3.249.14.175
+
+# Create payment requests (invoices):
+tagionwallet --pin 1234 --create-invoice Payment:100
 
 # Fulfil a payment request
 tagionwallet --pay ./invoice.hibon -x 1111 -u 3.249.14.175 --send
@@ -171,7 +173,7 @@ tagionwallet -g # Enter the Visual UI
 # Use arrows and 'Enter' to navigate through the recovery questions
 # Answer at least 3 questions
 # Press 'c' again to confirm
-# Enter a 4-digit Pincode (will be used later)
+# Enter a 4-digit pin-code (will be used later)
 # Press 'Enter', and hooray, you are done
 # Quit the Visual UI by pressing `q` until you are out
 
@@ -188,19 +190,15 @@ You need some Tagions to pay from one account to another. For that, we have an *
 First, you need to generate a **payment request**:
 
 ```bash
-./tagionwallet -g # Enter Visual UI
-# Enter Pincode
-# Press 'a' to enter account
-# Press 'i' to enter invoice mode
-# Type the invoice label, press enter
-# and fill the sum of Tagions to generate (less then 1000)
-# Quit the Visual UI by pressing `q` until you are out
+# Enter your pin-code instead of '1234'
+# Choose amount you want to receive (less than 1000)
+tagionwallet --pin 1234 --create-invoice Payment:250
 
 ls # List all files in the Wallet directory
 # ./invoice.hibon should appear
 ```
 
-Then, send the `invoice.hibon` to our API:
+Then, send the `invoice.hibon` to our Faucet API:
 
 ```bash
 curl -sF paymentRequest=@invoice.hibon https://api.monitor.tagion.org/faucet/print
