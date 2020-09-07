@@ -85,12 +85,12 @@ apt-get install curl -y
 **Use one-line command:**
 
 ```bash
-curl -Lo /usr/bin/tagionwallet https://github.com/tagion/alpha_one/releases/download/tagionwallet-v1.0/tagionwallet && chmod +x /usr/bin/tagionwallet
+curl -Lo /usr/bin/tagionwallet https://github.com/tagion/alpha_one/releases/download/tagionwallet-v1.1/tagionwallet && chmod +x /usr/bin/tagionwallet
 ```
 
 **Or install manually:**
 
-1. [Download the wallet binary](https://github.com/tagion/alpha_one/releases/download/tagionwallet-v1.0/tagionwallet)
+1. [Download the wallet binary](https://github.com/tagion/alpha_one/releases/download/tagionwallet-v1.1/tagionwallet)
 2. Install the binary itself (via sudo) to `/usr/bin' 
 
 ```bash
@@ -209,7 +209,7 @@ ls # List all files in the Wallet directory
 Then, send the `invoice.hibon` to our Faucet API:
 
 ```bash
-curl -sF paymentRequest=@invoice.hibon https://api.monitor.tagion.org/faucet/print
+curl -sF paymentRequest=@invoice.hibon https://faucet.tagion.org/faucet/print
 ```
 
 If there were no problems, you will see a message saying "Print request was sent to the network". Wait for 5-15 seconds and check the balance:
