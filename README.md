@@ -85,12 +85,12 @@ apt-get install curl -y
 **Use one-line command:**
 
 ```bash
-curl -Lo /usr/bin/tagionwallet https://github.com/tagion/alpha_one/releases/download/tagionwallet-v1.1/tagionwallet && chmod +x /usr/bin/tagionwallet
+curl -Lo /usr/bin/tagionwallet https://github.com/tagion/alpha_one/releases/download/tagionwallet-v1.0/tagionwallet && chmod +x /usr/bin/tagionwallet
 ```
 
 **Or install manually:**
 
-1. [Download the wallet binary](https://github.com/tagion/alpha_one/releases/download/tagionwallet-v1.1/tagionwallet)
+1. [Download the wallet binary](https://github.com/tagion/alpha_one/releases/download/tagionwallet-v1.0/tagionwallet)
 2. Install the binary itself (via sudo) to `/usr/bin' 
 
 ```bash
