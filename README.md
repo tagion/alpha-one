@@ -48,7 +48,7 @@ This manual is intended for Tagion **AlphaOne** network users who will send and 
 >
 > **Tagion Wallet CLI** was tested only on **Ubuntu 18.04** and **Ubuntu 20.04**. 
 > 
-> If have a different OS, you can try using our **experimental** **[Docker image](./experimental/README.md#use-docker-image-to-run-tagionwallet)** instead.
+> If you are using a different OS, you can try using our **experimental** **[Docker image](./experimental/README.md#use-docker-image-to-run-tagionwallet)** instead.
 > 
 > *Going forward, this manual assumes you are running `tagionwallet` from **Ubuntu 18.04** or **Ubuntu 20.04**.*
 
